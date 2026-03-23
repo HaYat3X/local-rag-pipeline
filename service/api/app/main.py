@@ -1,12 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
 from api.v1.chat import router as chat_router
 
 app = FastAPI()
 
 # =========================
-# CORS
+# CORS設定
 # =========================
 app.add_middleware(
     CORSMiddleware,
@@ -21,6 +20,6 @@ app.add_middleware(
 # =========================
 app.include_router(
     chat_router,
-    prefix="/v1",   # ← これ超重要
+    prefix="/v1",  
     tags=["chat"]
 )
