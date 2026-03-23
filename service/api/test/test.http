@@ -1,0 +1,14 @@
+### Chat API テスト
+POST http://127.0.0.1:8000/v1/chat/completions
+Content-Type: application/json
+
+{
+  "model": "local-rag-model",
+  "messages": [
+    {
+      "role": "user",
+      "content": "ICPの精度をあげる方法は？"
+    }
+  ]
+}
+
