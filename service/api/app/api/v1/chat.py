@@ -1,7 +1,6 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 from typing import List
-
 from chromadb import Client
 from chromadb.config import Settings
 from chromadb.utils import embedding_functions

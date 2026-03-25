@@ -17,17 +17,16 @@ for key in [
 ]:
     os.environ.pop(key, None)
 
-from dotenv import load_dotenv
-load_dotenv()
-
 from chromadb import Client
 from chromadb.config import Settings
 from chromadb.utils import embedding_functions
+from dotenv import load_dotenv
+load_dotenv()
 
 # ===========================
 # 設定
 # ===========================
-CHROMA_PERSIST_DIR = os.environ.get("CHROMA_PERSIST_DIR", "../../data/chroma")
+CHROMA_PERSIST_DIR = os.environ.get("CHROMA_PERSIST_DIR", "../../../data/chroma")
 CHROMA_COLLECTION  = os.environ.get("CHROMA_COLLECTION_NAME", "knowledge_base")
 EMBEDDING_MODEL    = os.environ.get("EMBEDDING_MODEL", "intfloat/multilingual-e5-base")
 TOP_K              = int(os.environ.get("TOP_K", "3"))

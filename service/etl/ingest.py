@@ -28,6 +28,7 @@ from chromadb.config import Settings
 from chromadb.utils import embedding_functions
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from dotenv import load_dotenv
+import shutil
 from loaders.notion_loader import NotionLoader
 load_dotenv() 
 
@@ -184,7 +185,6 @@ def run(reset: bool = False, dry_run: bool = False):
     upsert_chunks(collection, all_documents, all_metadatas, all_ids)
 
     logger.info(f"\n[完了] ChromaDB 登録件数: {collection.count()} チャンク")
-
 
 def _print_sample_chunks(documents, metadatas, ids, n=3):
     """dry-run 時のサンプル表示"""
